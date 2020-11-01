@@ -23,7 +23,7 @@ pipeline {
 
         stage('Functional testing') {
           steps {
-            echo 'Running functional scriptsss'
+            echo 'Running functional scripts'
           }
         }
 

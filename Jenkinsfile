@@ -10,6 +10,8 @@ pipeline {
     stage('Smoke Test') {
       steps {
         echo 'Running the smoke tests'
+        git(url: 'https://github.com/selvasil/EyeAutomation', branch: 'master')
+        bat(script: 'mvn test -DEnvironment = QA', label: 'Script Run in QA env')
       }
     }
 

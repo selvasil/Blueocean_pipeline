@@ -11,7 +11,7 @@ pipeline {
       steps {
         echo 'Running the smoke tests'
         git(url: 'https://github.com/selvasil/EyeAutomation', branch: 'master')
-        bat(script: 'mvn test -DEnvironment = QA', label: 'Script Run in QA env')
+        bat(script: 'mvn test -DEnvironment=QA', label: 'Script Run in QA env')
       }
     }
 
@@ -41,6 +41,7 @@ pipeline {
     stage('Certify by QA') {
       steps {
         echo 'Certified to approve'
+        input 'Are u sure to certify?'
       }
     }
 

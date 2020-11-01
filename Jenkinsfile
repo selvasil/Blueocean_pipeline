@@ -8,6 +8,9 @@ pipeline {
     }
 
     stage('Smoke Test') {
+      when {
+        branch 'master'
+      }
       steps {
         echo 'Running the smoke tests'
         git(url: 'https://github.com/selvasil/EyeAutomation', branch: 'master')

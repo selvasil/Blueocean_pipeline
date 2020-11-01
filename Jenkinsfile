@@ -41,7 +41,7 @@ pipeline {
     stage('Certify by QA') {
       steps {
         echo 'Certified to approve'
-        input 'Are u sure to certify?'
+        input(message: 'Are u sure to certify?', ok: 'Yes')
       }
     }
 
